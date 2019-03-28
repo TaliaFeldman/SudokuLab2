@@ -283,7 +283,7 @@ public class Sudoku extends LatinSquare {
 
 	//changed
 	public void PrintPuzzle() {
-		for (int i = 0; i < iSize; i++) {
+		for (int i = 0; i < this.getPuzzle().length; i++) {
 			System.out.println("");
 			for (int j = 0; j < this.getPuzzle().length; j++) {
 				System.out.print(this.getPuzzle()[i][j]);

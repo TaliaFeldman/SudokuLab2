@@ -22,7 +22,7 @@ public class SudokuPrivateMethodsTests {
 		Sudoku s1 = null;
 		int puzzleSize = 9;
 		try {
-			Class cls = s1.getClass();
+			Class<?> cls = s1.getClass();
 			Constructor constr = cls.getConstructor(new Class[] {int.class});
 			constr.setAccessible(true);
 			s1 = (Sudoku) constr.newInstance(puzzleSize);
@@ -61,10 +61,11 @@ public class SudokuPrivateMethodsTests {
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
-	}
+	}  
 	
 	@Test
-	public void setRegion_Test() throws ClassNotFoundException {
+	public void setRegion_Test() {
+		
 		Sudoku s1 = null;
 		int iPuzzleSize = 9;
 		int[] iExpectedReg = new int[iPuzzleSize];
@@ -73,7 +74,7 @@ public class SudokuPrivateMethodsTests {
 		}
 		int[] iActualReg;
 		try {
-			Class c = Class.forName("pkgGame.Sudoku");
+			Class<?> c = Class.forName("pkgGame.Sudoku");
 			Constructor constr = c.getConstructor(new Class[] {int.class});
 			constr.setAccessible(true);
 			s1 = (Sudoku) constr.newInstance(iPuzzleSize);
@@ -101,6 +102,9 @@ public class SudokuPrivateMethodsTests {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
