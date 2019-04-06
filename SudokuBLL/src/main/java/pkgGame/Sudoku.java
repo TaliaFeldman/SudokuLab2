@@ -275,13 +275,20 @@ public class Sudoku extends LatinSquare {
 		return true;
 	}
 
-	// getRegionNbr
+	/**
+	 * getRegionNbr - returns the region number.
+	 * 
+	 * @param iCol integer of col
+	 * @param iRow integer of row
+	 */
 	public int getRegionNbr(int iCol, int iRow) {
 		int i = (iCol / iSqrtSize) + ((iRow / iSqrtSize) * iSqrtSize);
 		return i;
 	}
-
-	//changed
+  
+	/**
+	 * PrintPuzzle - prints the puzzle
+	 */
 	public void PrintPuzzle() {
 		for (int i = 0; i < this.getPuzzle().length; i++) {
 			System.out.println("");
@@ -297,7 +304,11 @@ public class Sudoku extends LatinSquare {
 		System.out.println(" "); 
 	}
 
-	// shuffleArray 
+	/**
+	 * shuffleArray - shuffles the given array
+	 * 
+	 * @param ar array of integers
+	 */ 
 	private void shuffleArray(int[] ar) {
 		Random rand = new Random();
 		for (int i = 0; i < 4; i++) {
@@ -354,8 +365,9 @@ public class Sudoku extends LatinSquare {
 		}
 	}
 
-	// FillDiagonalRegion
-	// need setRegion and shuffleReg?
+	/**
+	 * FillDiagonalRegion - fills diagonal regions (0, 4, 8)
+	 */
 	private void FillDiagonalRegion() { 
 		for (int i = 0; i < iSize; i += iSqrtSize) {
 			System.out.println(getRegionNbr(i,i));
@@ -365,12 +377,5 @@ public class Sudoku extends LatinSquare {
 		}
 	}
 
-	// print starts
-	//private void printStars() {
-	//	for (int i = 0; i < 50; i++) {
-	//		System.out.print("*");
-	//	}
-	//	System.out.println();
-	//}
 
 }
